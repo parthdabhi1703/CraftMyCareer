@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Setup Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" style="max-width: 600px; margin: 10vh auto">
+        <h2>Let's set up your profile</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-muted)">
+          This info guides the AI generation.
+        </p>
+
+        <form id="profile-form">
+          <label>Full Name</label>
+          <input type="text" id="fullName" placeholder="John Doe" required />
+
+          <label>Target Role</label>
+          <input
+            type="text"
+            id="role"
+            placeholder="e.g. Full Stack Developer"
+            required
+          />
+
+          <label>Experience Level</label>
+          <select id="level">
+            <option>Student</option>
+            <option>Fresher</option>
+            <option>Professional</option>
+          </select>
+
+          <br /><br />
+
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <a
+              href="builder.html"
+              class="btn btn-outline"
+              style="border: 1px solid gray; color: var(--text-muted)"
+              >Skip</a
+            >
+
+            <a
+              href="builder.html"
+              class="btn btn-primary"
+              onclick="saveProfileStep()"
+              style="display: inline-flex; align-items: center; gap: 0.5rem"
+              >Continue
+              <span class="material-icons" style="font-size: 1.2em"
+                >arrow_forward</span
+              ></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/themeToggle.js"></script>
+    <script>
+      // Simple inline script for the transition
+      function saveProfileStep() {
+        const existingData =
+          JSON.parse(localStorage.getItem("resumeData")) || {};
+        const newData = {
+          ...existingData,
+          fullName: document.getElementById("fullName").value,
+          role: document.getElementById("role").value,
+          experienceLevel: document.getElementById("level").value,
+        };
+        localStorage.setItem("resumeData", JSON.stringify(newData));
+      }
+    </script>
+  </body>
+</html>

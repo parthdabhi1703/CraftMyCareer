@@ -1,0 +1,29 @@
+/* DESIGN ENGINEERING NOTE: 
+   Using CSS Variables allows for global theming and easy maintenance.
+   This supports the "Scalability" requirement of the project. 
+*/
+
+:root {
+  /* Color Palette - Cyan/Blue Gradient */
+  --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --primary-color: #3b82f6;
+  --secondary-color: #06b6d4;
+
+  /* Light Mode Defaults */
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+  --bg-body: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow: 0 4px 20px -1px rgb(0 0 0 / 0.5);
+}

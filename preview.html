@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resume Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/theme.css" />
+    <style>
+      /* Specific Print Styles */
+      .a4-page {
+        width: 210mm;
+        min-height: 297mm;
+        background: white;
+        color: black;
+        margin: 2rem auto;
+        padding: 2rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      @media print {
+        body {
+          background: white;
+        }
+        .no-print {
+          display: none;
+        }
+        .a4-page {
+          box-shadow: none;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="no-print"
+      style="text-align: center; padding: 1rem; background: var(--bg-card)"
+    >
+      <a
+        href="builder.html"
+        style="
+          margin-right: 1rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          text-decoration: none;
+          color: var(--text-main);
+        "
+        ><span class="material-icons">arrow_back</span> Back to Edit</a
+      >
+      <button
+        onclick="window.print()"
+        style="
+          background: var(--primary-color);
+          color: white;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+        "
+      >
+        Download PDF
+      </button>
+    </div>
+
+    <div class="a4-page" id="resume-preview">
+      <h1 id="p-name" style="margin-bottom: 0">Your Name</h1>
+      <p id="p-role" style="color: #666; margin-bottom: 1rem">Role</p>
+      <hr />
+      <h4 style="margin-top: 1rem">SUMMARY</h4>
+      <p id="p-summary">Your summary...</p>
+
+      <h4 style="margin-top: 1rem">SKILLS</h4>
+      <p id="p-skills">Your skills...</p>
+    </div>
+
+    <script>
+      // Load data immediately
+      const data = JSON.parse(localStorage.getItem("resumeData")) || {};
+      document.getElementById("p-name").textContent =
+        data.fullName || "Your Name";
+      document.getElementById("p-role").textContent = data.role || "Your Role";
+      document.getElementById("p-summary").textContent =
+        data.summary || "No summary provided.";
+      document.getElementById("p-skills").textContent =
+        data.skills || "No skills listed.";
+    </script>
+  </body>
+</html>
