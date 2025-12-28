@@ -204,7 +204,10 @@
         if (data.experienceLevel)
           document.getElementById("profileLevel").value = data.experienceLevel;
 
-        const currentTheme = localStorage.getItem("theme") || "light";
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const currentTheme = prefersDark ? "dark" : "light";
         document.getElementById("themeSelect").value = currentTheme;
       });
 
@@ -225,7 +228,7 @@
 
         // Update Theme
         document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
+        // localStorage.setItem("theme", theme); // Disabled for default System Mode
 
         // Update Toggle Button Icon if it exists
         const toggleBtn = document.getElementById("theme-toggle");

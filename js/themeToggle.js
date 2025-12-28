@@ -1,32 +1,55 @@
 /* ENGINEERING NOTE:
-   State Persistence: We use localStorage so the user's preference 
-   persists across page reloads and sessions.
+   State Persistence: Removed to ensure default System Mode on open.
+   The theme will default to system preference and listen for changes.
+   User toggle is temporary for the session.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('theme-toggle');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const systemMedia = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Load saved theme or system preference
-    const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', currentTheme);
+    // Function to update icon
+    function updateIcon(theme) {
+        if (toggleBtn) {
+            const iconSpan = toggleBtn.querySelector('.material-icons');
+            if (iconSpan) {
+                iconSpan.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        }
+    }
+
+    // Function to apply system theme
+    function applySystemTheme() {
+        const theme = systemMedia.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        updateIcon(theme);
+    }
+
+    // Handler for system changes
+    const handleSystemChange = (e) => {
+        const theme = e.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        updateIcon(theme);
+    };
+
+    // Initialize with system theme (ignoring localStorage)
+    applySystemTheme();
+
+    // Listen for system theme changes
+    systemMedia.addEventListener('change', handleSystemChange);
 
     if (toggleBtn) {
-        const iconSpan = toggleBtn.querySelector('.material-icons');
-        if (iconSpan) {
-            iconSpan.textContent = currentTheme === 'dark' ? 'light_mode' : 'dark_mode';
-        }
-
         toggleBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            let newTheme = theme === 'dark' ? 'light' : 'dark';
+            // User manually overrode, so stop listening to system
+            systemMedia.removeEventListener('change', handleSystemChange);
+
+            let current = document.documentElement.getAttribute('data-theme');
+            let newTheme = current === 'dark' ? 'light' : 'dark';
 
             document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+            // localStorage.setItem('theme', newTheme); // Disabled for default System Mode
 
-            if (iconSpan) {
-                iconSpan.textContent = newTheme === 'dark' ? 'light_mode' : 'dark_mode';
-            }
+            updateIcon(newTheme);
         });
     }
 });
