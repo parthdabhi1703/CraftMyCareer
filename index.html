@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -50,8 +51,40 @@
           style="padding: 0.5rem 1rem"
           >Sign Up</a
         >
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="mobile-menu-actions">
+        <a
+          href="login.html"
+          class="btn btn-outline"
+          style="width: 100%; text-align: center"
+          >Login</a
+        >
+        <a
+          href="signup.html"
+          class="btn btn-primary"
+          style="width: 100%; text-align: center"
+          >Sign Up</a
+        >
+        <div class="mobile-theme-toggle" id="mobile-theme-toggle">
+          <span class="material-icons">dark_mode</span>
+          <span>Toggle Theme</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -243,6 +276,43 @@
           element.querySelector(".material-icons").innerText = "remove";
         }
       }
+    </script>
+
+    <script>
+      // Hamburger menu functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const body = document.body;
+
+        if (hamburger) {
+          hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            mobileMenu.classList.toggle("active");
+            body.classList.toggle("menu-open");
+          });
+        }
+
+        // Close menu when clicking on a link
+        const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            mobileMenu.classList.remove("active");
+            body.classList.remove("menu-open");
+          });
+        });
+
+        // Mobile theme toggle
+        const mobileThemeToggle = document.getElementById(
+          "mobile-theme-toggle"
+        );
+        if (mobileThemeToggle) {
+          mobileThemeToggle.addEventListener("click", () => {
+            document.getElementById("theme-toggle").click();
+          });
+        }
+      });
     </script>
 
     <script src="js/themeToggle.js"></script>

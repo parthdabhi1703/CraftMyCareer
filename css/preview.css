@@ -1,0 +1,298 @@
+/* Preview Page Specific Styles */
+body {
+  background-color: var(--bg-body);
+  margin: 0;
+  padding: 0;
+}
+
+/* Preview Header */
+.preview-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.preview-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preview-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-back:hover {
+  background-color: var(--bg-body);
+}
+
+.btn-download {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.1s;
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+}
+
+/* Preview Container */
+.preview-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* A4 Page Styling */
+.a4-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  color: black;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Resume Styles - matching template styles */
+.resume-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 1rem;
+}
+
+.resume-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.resume-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.resume-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.resume-section {
+  margin-bottom: 1.5rem;
+}
+
+.resume-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resume-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resume-skill-tag {
+  background: #f0f0f0;
+  color: #333;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.resume-item {
+  margin-bottom: 1.25rem;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.resume-item-title {
+  font-weight: 600;
+  color: #000;
+}
+
+.resume-item-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.resume-item-subtitle {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.resume-item-description {
+  color: #333;
+  line-height: 1.6;
+}
+
+.resume-item-description ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.resume-item-description li {
+  margin-bottom: 0.25rem;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .preview-header {
+    display: none !important;
+  }
+
+  .preview-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .a4-page {
+    width: 100%;
+    min-height: auto;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure content doesn't break across pages */
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  .resume-item {
+    page-break-inside: avoid;
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .preview-header {
+    padding: 0.75rem 1rem;
+    flex-direction: row;
+  }
+
+  .preview-header-left,
+  .preview-header-right {
+    gap: 0.5rem;
+  }
+
+  .btn-back,
+  .btn-download {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-back span.material-icons,
+  .btn-download span.material-icons {
+    font-size: 1.1rem;
+  }
+
+  .preview-container {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+
+  .a4-page {
+    width: 100%;
+    min-height: auto;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .resume-name {
+    font-size: 1.5rem;
+  }
+
+  .resume-contact {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .resume-section-title {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .preview-header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .btn-back {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-download {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .a4-page {
+    padding: 0.75rem;
+  }
+
+  .resume-name {
+    font-size: 1.25rem;
+  }
+
+  .resume-section-title {
+    font-size: 0.95rem;
+  }
+
+  .resume-item-description {
+    font-size: 0.9rem;
+  }
+}
