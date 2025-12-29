@@ -273,6 +273,41 @@ select {
   display: none !important;
 }
 
+.builder-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Mobile Preview Scaling */
+.preview-scale-wrapper {
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  background: var(--bg-card);
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  /* Center the scaled content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-scale-wrapper .a4-page {
+  transform: scale(0.4); /* Default scale for mobile */
+  transform-origin: top center;
+  margin-bottom: -178mm; /* Compensate for empty space after scaling */
+}
+
+@media (min-width: 768px) {
+  .preview-scale-wrapper .a4-page {
+    transform: scale(0.6);
+    margin-bottom: -118mm;
+  }
+}
+
 @media (min-width: 1024px) {
   .desktop-only {
     display: block !important;
@@ -282,27 +317,20 @@ select {
   }
 
   .builder-grid {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 2fr 1fr; /* Changed to 2fr 1fr to match original inline style */
+    gap: 2rem;
   }
 
   .preview-scale-wrapper {
-    width: 100%;
     max-width: 435px;
-    overflow: hidden;
-    /* display: flex; */
-    justify-content: center;
-    background: var(--bg-card);
-    margin: 0 auto;
-    /* padding: 0.5rem; */
-    border: 1px solid var(--border-color);
-    box-shadow: 0px 5px 15px #000;
-    border-radius: 8px;
+    display: block; /* Reset flex for desktop if needed, or keep it */
   }
 
   .preview-scale-wrapper .a4-page {
     transform: scale(0.55);
     transform-origin: top left;
-    margin-bottom: -135mm; /* Compensate for empty space after scaling */
+    margin-bottom: -133mm; /* Compensate for empty space after scaling */
+    margin-left: 0; /* Reset centering margin if any */
   }
 }
 
@@ -404,8 +432,8 @@ select {
 
 .delete-btn {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: -0.2rem;
+  right: 0.2rem;
   background: transparent;
   border: none;
   color: #ef4444;

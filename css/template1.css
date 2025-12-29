@@ -1,7 +1,7 @@
-/* Template 1: Default (Jainil Format) */
+/* Template 1: Default */
 .a4-page {
   width: 210mm;
-  min-height: 297mm;
+  min-height: 295mm;
   background: white;
   color: black;
   padding: 2rem;

@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | CraftMyCareer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,12 +69,6 @@
         <li><a href="templates.html">Templates</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
-      <div class="mobile-menu-actions">
-        <div class="mobile-theme-toggle" id="mobile-theme-toggle">
-          <span class="material-icons">dark_mode</span>
-          <span>Toggle Theme</span>
-        </div>
-      </div>
     </div>
 
     <div class="container">
@@ -185,16 +180,6 @@
             body.classList.remove("menu-open");
           });
         });
-
-        // Mobile theme toggle
-        const mobileThemeToggle = document.getElementById(
-          "mobile-theme-toggle"
-        );
-        if (mobileThemeToggle) {
-          mobileThemeToggle.addEventListener("click", () => {
-            document.getElementById("theme-toggle").click();
-          });
-        }
       });
     </script>
     <script src="js/themeToggle.js"></script>

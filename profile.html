@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile | CraftMyCareer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,8 +51,23 @@
           >
           Back
         </a>
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="builder.html">Builder</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
 
     <div class="container" style="margin-top: 2rem">
       <div class="profile-grid">
@@ -251,6 +267,31 @@
         // Clear session if needed, for now just redirect
         window.location.href = "index.html";
       }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Hamburger menu functionality
+        const hamburger = document.getElementById("hamburger-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const body = document.body;
+
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            mobileMenu.classList.toggle("active");
+            body.classList.toggle("menu-open");
+          });
+
+          // Close menu when clicking on a link
+          const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
+          mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+              hamburger.classList.remove("active");
+              mobileMenu.classList.remove("active");
+              body.classList.remove("menu-open");
+            });
+          });
+        }
+      });
     </script>
   </body>
 </html>

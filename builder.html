@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,27 +69,18 @@
         <li><a href="templates.html">Templates</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
-      <div class="mobile-menu-actions">
-        <div class="mobile-theme-toggle" id="mobile-theme-toggle">
-          <span class="material-icons">dark_mode</span>
-          <span>Toggle Theme</span>
-        </div>
-      </div>
     </div>
 
     <div
       class="container builder-grid"
       style="
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 0rem;
         margin-top: 1rem;
       "
     >
       <div>
         <div class="builder-header">
           <h3>AI Resume Builder</h3>
-          <a href="preview.html" class="btn btn-primary btn-preview mobile-only" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          <a href="#resume-preview" class="btn btn-primary btn-preview mobile-only" style="display: inline-flex; align-items: center; gap: 0.5rem;">
             <span class="material-icons" style="font-size: 1.1rem;">visibility</span>
             Preview
           </a>
@@ -247,7 +239,7 @@
 
       <div>
         <!-- Desktop Preview Section -->
-        <div class="desktop-only" style="margin-bottom: 2rem">
+        <div class="preview-container" style="margin-bottom: 2rem">
           <div
             style="
               display: flex;
@@ -256,7 +248,7 @@
               margin-bottom: 1rem;
             "
           >
-            <h3 style="margin-bottom: 10px;">Live Preview</h3>
+            <h3>Live Preview</h3>
             <button onclick="window.print()" class="btn btn-primary">
               Download PDF
             </button>
@@ -399,14 +391,6 @@
             body.classList.remove('menu-open');
           });
         });
-
-        // Mobile theme toggle
-        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-        if (mobileThemeToggle) {
-          mobileThemeToggle.addEventListener('click', () => {
-            document.getElementById('theme-toggle').click();
-          });
-        }
       });
     </script>
     <script type="module" src="js/geminiServices.js"></script>

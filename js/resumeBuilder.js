@@ -353,7 +353,7 @@ function renderEducationList() {
                         <option value="" ${!item.gradeType ? 'selected' : ''}>Type</option>
                         ${gradeOptions.map(opt => `<option value="${opt}" ${item.gradeType === opt ? 'selected' : ''}>${opt}</option>`).join('')}
                     </select>
-                    <input type="text" placeholder="Value" value="${item.grade}" oninput="updateEducation(${index}, 'grade', this.value)" style="flex: 1;">
+                    <input type="text" placeholder="Value" value="${item.grade}" oninput="updateEducation(${index}, 'grade', this.value)">
                 </div>
 
                 <input type="text" placeholder="Start Date" value="${item.start}" oninput="updateEducation(${index}, 'start', this.value)">
