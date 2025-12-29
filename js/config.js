@@ -1,3 +1,3 @@
 export const CONFIG = {
-    GEMINI_API_KEY: "AIzaSyDbrnzsR99rRMvK6-Xct_ySx4WnaChr8K4"
+    GEMINI_API_KEY: "AIzaSyAhg2HsQaC8mmEjIVKvOI5p95IcXMXYFvk"
 };
