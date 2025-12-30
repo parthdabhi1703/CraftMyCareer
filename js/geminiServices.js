@@ -10,8 +10,8 @@ import { CONFIG } from './config.js';
    3. Pattern: Uses Async/Await for non-blocking UI operations.
 */
 
-// const API_KEY = GEMINI_API_KEY;
-const API_KEY = GEMINI_API_KEY;
+// const API_KEY = CONFIG.GEMINI_API_KEY;
+const API_KEY = CONFIG.GEMINI_API_KEY;
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 export const GeminiService = {
