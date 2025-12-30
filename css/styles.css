@@ -618,8 +618,8 @@ select {
 }
 
 .alert-card.warning {
-  background-color: #fff3cd;
-  color: var(--bg-body);
+  background-color: var(--bg-card);
+  color: var(--text-main);
   border-color: #333;
 }
 
