@@ -387,10 +387,35 @@ function renderCertificationList() {
         <div class="dynamic-item">
             <button class="delete-btn" onclick="removeCertification(${index})">&times;</button>
             <input type="text" placeholder="Certificate Title" value="${item.title}" oninput="updateCertification(${index}, 'title', this.value)">
-            <textarea rows="2" placeholder="Description" oninput="updateCertification(${index}, 'description', this.value)">${item.description}</textarea>
+            <div style="position: relative; margin-top: 0.5rem;">
+                <textarea rows="3" id="cert-desc-${index}" placeholder="Description" oninput="updateCertification(${index}, 'description', this.value)">${item.description}</textarea>
+                <button onclick="enhanceCertification(${index})" class="btn btn-primary" style="position: absolute; bottom: 35px; right: 15px; font-size: 0.8rem; padding: 6px 12px; z-index: 5;">✨ AI Enhance</button>
+            </div>
         </div>
     `).join('');
 }
+
+window.enhanceCertification = async function (index) {
+    const item = resumeData.certifications[index];
+    if (!item.title) return alert("Please enter a certificate title first.");
+
+    const btn = document.querySelector(`#cert-desc-${index} + button`);
+    const originalText = btn.innerText;
+    btn.innerText = "Generating...";
+    btn.disabled = true;
+
+    const result = await GeminiService.enhanceCertification(item.title, item.description);
+
+    btn.innerText = originalText;
+    btn.disabled = false;
+
+    if (result.text) {
+        updateCertification(index, 'description', result.text);
+        document.getElementById(`cert-desc-${index}`).value = result.text;
+    } else {
+        alert("AI Error: " + result.error);
+    }
+};
 
 function renderAllDynamicLists() {
     renderSummary();

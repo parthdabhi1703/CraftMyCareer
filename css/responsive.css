@@ -104,6 +104,10 @@
 
 /* Tablet and Mobile Responsive Styles */
 @media screen and (max-width: 1024px) {
+  #greeting {
+    display: none !important;
+  }
+
   .container {
     padding: 1rem;
   }

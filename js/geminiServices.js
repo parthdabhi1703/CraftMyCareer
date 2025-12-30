@@ -78,6 +78,19 @@ export const GeminiService = {
     },
 
     /**
+     * Generates a one-line description for a Certification.
+     */
+    async enhanceCertification(title, currentDescription) {
+        const prompt = `
+            Act as an expert resume writer.
+            Task: Write exactly ONE impactful line about what was learned or achieved from the certification titled "${title}".
+            Context: ${currentDescription || "No description provided"}.
+            Output ONLY the one sentence. Do not use bullet points.
+        `;
+        return await this.callGemini(prompt);
+    },
+
+    /**
      * Generates ATS Score and Suggestions
      */
     async getATSReview(resumeData) {

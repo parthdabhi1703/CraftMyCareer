@@ -39,7 +39,6 @@
       </ul>
 
       <div class="nav-actions">
-        <span id="greeting" style="font-weight: 500; margin-right: 1rem; display: none;"></span>
         <button
           id="theme-toggle"
           style="display: flex; align-items: center; justify-content: center"
@@ -77,8 +76,10 @@
       "
     >
       <div>
-        <div class="builder-header">
-          <h3 style="align-items: bottom;">AI Resume Builder</h3>
+        <div class="builder-header" style="display: flex; align-items: center; gap: 10rem; align-items: baseline;">
+          <h3 style="margin-bottom: 0;">AI Resume Builder</h3>
+          <span id="greeting" style="font-weight: 500; color: var(--primary-color); display: none;"></span>
+          <div style="flex-grow: 1;"></div>
           <a href="#resume-preview" class="btn btn-primary btn-preview mobile-only" style="display: inline-flex; align-items: center; gap: 0.5rem;">
             <span class="material-icons" style="font-size: 1.1rem;">visibility</span>
             Preview
