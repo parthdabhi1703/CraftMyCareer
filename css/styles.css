@@ -630,3 +630,28 @@ select {
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
+
+/* Password Toggle */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px; /* Make space for the icon */
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: var(--text-muted);
+  user-select: none;
+  margin-bottom: 15px;
+}
+
+.password-toggle:hover {
+  color: var(--primary-color);
+}

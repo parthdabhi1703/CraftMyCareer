@@ -44,12 +44,19 @@
           />
 
           <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            required
-          />
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <span
+              class="material-icons password-toggle"
+              onclick="togglePassword('password', this)"
+              >visibility_off</span
+            >
+          </div>
 
           <button
             type="submit"
@@ -88,6 +95,17 @@
 
     <script src="js/themeToggle.js"></script>
     <script>
+      function togglePassword(inputId, icon) {
+        const input = document.getElementById(inputId);
+        if (input.type === "password") {
+          input.type = "text";
+          icon.textContent = "visibility";
+        } else {
+          input.type = "password";
+          icon.textContent = "visibility_off";
+        }
+      }
+
       document.getElementById("login-form").addEventListener("submit", (e) => {
         e.preventDefault();
         const email = document.getElementById("email").value;

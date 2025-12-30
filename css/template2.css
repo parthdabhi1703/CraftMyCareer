@@ -145,13 +145,6 @@
   text-align: justify;
 }
 
-/* Layout Adjustments for this template */
-/* We need to override the default structure slightly via CSS grid if possible, 
-   but since the HTML structure is fixed, we'll style it to look good in a single column flow 
-   or try to fake a sidebar if the HTML allows. 
-   For now, let's stick to a clean single column with colored headers for Template 2 
-   to ensure compatibility with the existing HTML structure. */
-
 .a4-page {
   display: block; /* Reset grid */
 }

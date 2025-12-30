@@ -76,9 +76,8 @@
       "
     >
       <div>
-        <div class="builder-header" style="display: flex; align-items: center; gap: 10rem; align-items: baseline;">
+        <div class="builder-header" style="display: flex;">
           <h3 style="margin-bottom: 0;">AI Resume Builder</h3>
-          <span id="greeting" style="font-weight: 500; color: var(--primary-color); display: none;"></span>
           <div style="flex-grow: 1;"></div>
           <a href="#resume-preview" class="btn btn-primary btn-preview mobile-only" style="display: inline-flex; align-items: center; gap: 0.5rem;">
             <span class="material-icons" style="font-size: 1.1rem;">visibility</span>
@@ -244,7 +243,6 @@
             style="
               display: flex;
               justify-content: space-between;
-              align-items: center;
               margin-bottom: 1rem;
             "
           >
@@ -315,8 +313,9 @@
             <li>Scale: Default</li>
           </ul>
         </div>
-<!-- 
-        <div
+
+<!--
+    <div
           class="card"
           style="
             background: linear-gradient(
@@ -360,31 +359,9 @@
       </div>
     </div> -->
 
-    <!-- <footer class="footer">
-      <div class="footer-links">
-        <a href="about.html">About Us</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Contact</a>
-      </div>
-      <p>&copy; 2025 CraftMyCareer. All rights reserved.</p>
-    </footer> -->
-
     <script src="js/themeToggle.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const data = JSON.parse(localStorage.getItem('resumeData')) || {};
-        if (data.fullName) {
-          const hour = new Date().getHours();
-          let greeting = 'Good Morning';
-          if (hour >= 12 && hour < 17) greeting = 'Good Afternoon';
-          else if (hour >= 17) greeting = 'Good Evening';
-          
-          const greetingEl = document.getElementById('greeting');
-          greetingEl.textContent = `${greeting}, ${data.fullName}`;
-          greetingEl.style.display = 'inline';
-        }
-
         // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger-menu');
         const mobileMenu = document.getElementById('mobile-menu');

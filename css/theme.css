@@ -1,8 +1,3 @@
-/* DESIGN ENGINEERING NOTE: 
-   Using CSS Variables allows for global theming and easy maintenance.
-   This supports the "Scalability" requirement of the project. 
-*/
-
 :root {
   /* Color Palette - Cyan/Blue Gradient */
   --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);

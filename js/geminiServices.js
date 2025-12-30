@@ -1,24 +1,11 @@
 import { CONFIG } from './config.js';
 
-/* MODULE: Gemini Services
-   PURPOSE: Abstraction layer for AI interactions. 
-   
-   ENGINEERING DOCS:
-   1. Security: In a real production app, the API Key must NOT be stored here.
-      Calls should go to a backend proxy (Node.js/Python) which then calls Gemini.
-   2. Model: Uses gemini-2.5-flash for low latency and high throughput.
-   3. Pattern: Uses Async/Await for non-blocking UI operations.
-*/
-
-// const API_KEY = CONFIG.GEMINI_API_KEY;
 const API_KEY = CONFIG.GEMINI_API_KEY;
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 export const GeminiService = {
 
-    /**
-     * Helper to make the fetch request
-     */
+    // Helper to make the fetch request
     async callGemini(promptText) {
         try {
             // MOCK RESPONSE if no key is provided (for safe viva demo)
@@ -45,9 +32,7 @@ export const GeminiService = {
         }
     },
 
-    /**
-     * Enhances a professional summary based on role.
-     */
+    // Enhances a professional summary based on role.
     async enhanceSummary(currentSummary, role) {
         const prompt = `
             Act as an expert resume writer. 
@@ -60,9 +45,7 @@ export const GeminiService = {
         return await this.callGemini(prompt);
     },
 
-    /**
-     * Generates bullet points for Experience or Projects.
-     */
+    // Generates bullet points for Experience or Projects.
     async generateBulletPoints(role, context, type) {
         const prompt = `
             Act as an expert resume writer. 
@@ -77,9 +60,7 @@ export const GeminiService = {
         return await this.callGemini(prompt);
     },
 
-    /**
-     * Generates a one-line description for a Certification.
-     */
+    // Generates a one-line description for a Certification.
     async enhanceCertification(title, currentDescription) {
         const prompt = `
             Act as an expert resume writer.
@@ -90,9 +71,7 @@ export const GeminiService = {
         return await this.callGemini(prompt);
     },
 
-    /**
-     * Generates ATS Score and Suggestions
-     */
+    // Generates ATS Score and Suggestions
     async getATSReview(resumeData) {
         const prompt = `
             Analyze this resume data for a ${resumeData.role} role.
