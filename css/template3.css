@@ -6,23 +6,23 @@
   min-height: 297mm;
   background: white;
   color: #222;
-  padding: 3rem;
+  /* padding: 3rem; */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   font-family: "Merriweather", serif;
 }
 
 .resume-header {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   border-bottom: 1px solid #eee;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 .resume-name {
-  font-size: 26pt;
+  font-size: 28pt;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  /* margin-bottom: 0.8rem; */
   color: #000;
   letter-spacing: 0.5px;
 }
@@ -50,7 +50,7 @@
 
 /* Sections */
 .resume-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .resume-section-title {
@@ -60,7 +60,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #444;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem;
   border-bottom: none;
   display: inline-block;
   border-bottom: 1px solid #000;
@@ -69,7 +69,7 @@
 
 /* Items */
 .resume-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .resume-item-header {
@@ -108,7 +108,7 @@
 }
 
 .resume-list li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
 }
 
 /* Skills */

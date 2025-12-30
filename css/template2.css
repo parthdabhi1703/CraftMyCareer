@@ -4,7 +4,6 @@
   min-height: 297mm;
   background: white;
   color: #333;
-  padding: 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -41,7 +40,7 @@
 .resume-name {
   font-size: 28pt;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   letter-spacing: 1px;
 }
 
@@ -51,7 +50,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  /* margin-top: 0.5rem; */
   color: #ecf0f1;
 }
 
@@ -68,22 +67,22 @@
 
 /* Sections */
 .resume-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .resume-section-title {
   font-size: 14pt;
   font-weight: 600;
   color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  margin-bottom: 1rem;
+  border-bottom: 1.5px solid #3498db;
+  margin-bottom: 0.5rem;
   padding-bottom: 0.3rem;
   text-transform: uppercase;
 }
 
 /* Items */
 .resume-item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .resume-item-header {
@@ -155,14 +154,13 @@
 
 .a4-page {
   display: block; /* Reset grid */
-  border-top: 10px solid #3498db;
 }
 
 .resume-header {
   background: white;
   color: #333;
   text-align: left;
-  padding: 0 0 2rem 0;
+  padding: 0 0 1rem 0;
   border-bottom: none;
   display: block;
 }

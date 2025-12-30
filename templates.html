@@ -65,6 +65,210 @@
         font-size: 0.9rem;
         margin-bottom: 1rem;
       }
+
+      /* Mini Template Previews */
+      .mini-page {
+        width: 260px;
+        height: 368px; /* A4 Aspect Ratio */
+        background: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        cursor: default;
+        pointer-events: none; /* Let clicks pass to card */
+      }
+
+      /* Template 1 Mini (Professional) */
+      .preview-t1 {
+        font-family: "Inter", sans-serif;
+        padding: 20px;
+        color: black;
+      }
+      .preview-t1 .mini-header {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      .preview-t1 .mini-name {
+        font-size: 18px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        line-height: 1.2;
+      }
+      .preview-t1 .mini-contact {
+        font-size: 7px;
+        color: #333;
+        display: flex;
+        gap: 8px;
+      }
+      .preview-t1 .mini-section-title {
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-bottom: 1px solid #000;
+        margin-bottom: 6px;
+        margin-top: 10px;
+        padding-bottom: 2px;
+      }
+      .preview-t1 .mini-text {
+        font-size: 7px;
+        line-height: 1.4;
+        text-align: justify;
+        margin-bottom: 5px;
+      }
+      .preview-t1 .mini-item-title {
+        font-weight: 700;
+        font-size: 8px;
+      }
+      .preview-t1 .mini-item-sub {
+        font-weight: 600;
+        font-size: 7px;
+      }
+      .preview-t1 .mini-skills {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+      }
+      .preview-t1 .mini-skill-tag {
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        padding: 2px 4px;
+        border-radius: 2px;
+        font-size: 6px;
+        font-weight: 500;
+      }
+
+      /* Template 2 Mini (Modern Blue) */
+      .preview-t2 {
+        font-family: "Segoe UI", sans-serif;
+        padding: 20px;
+        color: #333;
+      }
+      .preview-t2 .mini-header {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      .preview-t2 .mini-name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 5px;
+      }
+      .preview-t2 .mini-contact {
+        font-size: 7px;
+        color: #555;
+        display: flex;
+        gap: 8px;
+      }
+      .preview-t2 .mini-section-title {
+        font-size: 10px;
+        font-weight: 600;
+        color: #2c3e50;
+        border-bottom: 1.5px solid #3498db;
+        margin-bottom: 6px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        padding-bottom: 2px;
+      }
+      .preview-t2 .mini-text {
+        font-size: 7px;
+        line-height: 1.4;
+        margin-bottom: 5px;
+      }
+      .preview-t2 .mini-item-title {
+        font-weight: 700;
+        font-size: 8px;
+        color: #2c3e50;
+      }
+      .preview-t2 .mini-item-sub {
+        font-weight: 600;
+        font-size: 7px;
+        color: #7f8c8d;
+      }
+      .preview-t2 .mini-skills {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+      }
+      .preview-t2 .mini-skill-tag {
+        background-color: #e1f5fe;
+        color: #0277bd;
+        padding: 2px 6px;
+        border-radius: 8px;
+        font-size: 6px;
+        font-weight: 600;
+      }
+
+      /* Template 3 Mini (Minimalist Serif) */
+      .preview-t3 {
+        font-family: "Merriweather", serif;
+        padding: 20px;
+        color: #222;
+      }
+      .preview-t3 .mini-header {
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+      .preview-t3 .mini-name {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: #000;
+        margin-bottom: 5px;
+      }
+      .preview-t3 .mini-contact {
+        font-family: "Open Sans", sans-serif;
+        font-size: 7px;
+        color: #555;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+      .preview-t3 .mini-section-title {
+        font-family: "Open Sans", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #444;
+        border-bottom: 1px solid #000;
+        display: inline-block;
+        margin-bottom: 6px;
+        margin-top: 10px;
+        padding-bottom: 2px;
+      }
+      .preview-t3 .mini-text {
+        font-size: 7px;
+        line-height: 1.6;
+        margin-bottom: 5px;
+      }
+      .preview-t3 .mini-item-title {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 8px;
+        color: #000;
+      }
+      .preview-t3 .mini-item-sub {
+        font-family: "Merriweather", serif;
+        font-weight: 600;
+        font-size: 7px;
+        color: #444;
+        font-style: italic;
+      }
+      .preview-t3 .mini-skills {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .preview-t3 .mini-skill-tag {
+        border-bottom: 1px dotted #999;
+        font-size: 7px;
+        padding-bottom: 1px;
+      }
     </style>
   </head>
   <body>
@@ -134,32 +338,48 @@
         <!-- Template 1 -->
         <div class="template-card" onclick="selectTemplate('template1')">
           <div class="template-preview">
-            <!-- Placeholder for preview image, using a div for now -->
-            <div
-              style="
-                color: black;
-                width: 80%;
-                height: 90%;
-                background: white;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                padding: 1rem;
-                font-size: 5px;
-                overflow: hidden;
-              "
-            >
-              <div
-                style="font-size: 12px; font-weight: bold; margin-bottom: 5px"
-              >
-                YOUR NAME
+            <div class="mini-page preview-t1">
+              <div class="mini-header">
+                <div class="mini-name">YOUR NAME</div>
+                <div class="mini-contact">
+                  <span>email@example.com</span> | <span>123-456-7890</span>
+                </div>
               </div>
-              <hr />
-              <div style="margin-top: 5px">SUMMARY</div>
+              <div class="mini-section-title">SUMMARY</div>
+              <div class="mini-text">
+                Experienced professional with a proven track record of success
+                in project management and team leadership. Dedicated to
+                delivering high-quality results.
+              </div>
+              <div class="mini-section-title">TECHNICAL SKILLS</div>
+              <div class="mini-skills">
+                <span class="mini-skill-tag">HTML</span>
+                <span class="mini-skill-tag">CSS</span>
+                <span class="mini-skill-tag">React</span>
+              </div>
+              <div class="mini-section-title">EXPERIENCE</div>
+              <div style="margin-bottom: 4px">
+                <div class="mini-item-title">SENIOR MANAGER</div>
+                <div class="mini-item-sub">
+                  Tech Solutions Inc. | 2020 - Present
+                </div>
+                <div class="mini-text">
+                  • Led a team of 10 developers.<br />
+                  • Increased productivity by 20%.
+                </div>
+              </div>
+              <div class="mini-section-title">EDUCATION</div>
+              <div>
+                <div class="mini-item-title">BS COMPUTER SCIENCE</div>
+                <div class="mini-item-sub">University of Technology</div>
+              </div>
             </div>
           </div>
           <div class="template-info">
             <div class="template-title">Professional (Default)</div>
             <div class="template-desc">
-              Clean, standard format suitable for most industries.
+              A clean, ATS-friendly resume layout designed for clarity,
+              readability, and universal acceptance.
             </div>
             <button class="btn btn-outline">Use Template</button>
           </div>
@@ -168,27 +388,37 @@
         <!-- Template 2 -->
         <div class="template-card" onclick="selectTemplate('template2')">
           <div class="template-preview">
-            <div
-              style="
-                width: 80%;
-                height: 90%;
-                background: white;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                display: flex;
-              "
-            >
-              <div style="width: 30%; background: #2c3e50; height: 100%"></div>
-              <div style="width: 70%; padding: 1rem">
-                <div style="font-size: 12px; font-weight: bold; color: #2c3e50">
-                  YOUR NAME
+            <div class="mini-page preview-t2">
+              <div class="mini-header">
+                <div class="mini-name">YOUR NAME</div>
+                <div class="mini-contact">
+                  <span>email@example.com</span> | <span>123-456-7890</span>
                 </div>
+              </div>
+              <div class="mini-section-title">SUMMARY</div>
+              <div class="mini-text">
+                Experienced professional with a proven track record of success
+                in project management and team leadership.
+              </div>
+              <div class="mini-section-title">TECHNICAL SKILLS</div>
+              <div class="mini-skills">
+                <span class="mini-skill-tag">HTML</span>
+                <span class="mini-skill-tag">CSS</span>
+                <span class="mini-skill-tag">React</span>
+              </div>
+              <div class="mini-section-title">EXPERIENCE</div>
+              <div style="margin-bottom: 4px">
+                <div class="mini-item-title">SENIOR MANAGER</div>
+                <div class="mini-item-sub">Tech Solutions Inc.</div>
+                <div class="mini-text">• Led a team of 10 developers.</div>
               </div>
             </div>
           </div>
           <div class="template-info">
             <div class="template-title">Modern Blue</div>
             <div class="template-desc">
-              Contemporary design with a sidebar and accent colors.
+              A sleek, modern resume with subtle blue accents that balances
+              professionalism with confidence.
             </div>
             <button class="btn btn-outline">Use Template</button>
           </div>
@@ -197,34 +427,46 @@
         <!-- Template 3 -->
         <div class="template-card" onclick="selectTemplate('template3')">
           <div class="template-preview">
-            <div
-              style="
-                color: #000;
-                width: 80%;
-                height: 90%;
-                background: white;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                padding: 1rem;
-                font-family: serif;
-              "
-            >
-              <div
-                style="
-                  text-align: center;
-                  font-size: 14px;
-                  font-weight: bold;
-                  border-bottom: 1px solid #eee;
-                  padding-bottom: 5px;
-                "
-              >
-                YOUR NAME
+            <div class="mini-page preview-t3">
+              <div class="mini-header">
+                <div class="mini-name">YOUR NAME</div>
+                <div class="mini-contact">
+                  <span>email@example.com</span> | <span>123-456-7890</span>
+                </div>
+              </div>
+              <div class="mini-section-title">SUMMARY</div>
+              <div class="mini-text">
+                Experienced professional with a proven track record of success
+                in project management and team leadership. Dedicated to
+                delivering high-quality results.
+              </div>
+              <div class="mini-section-title">TECHNICAL SKILLS</div>
+              <div class="mini-skills">
+                <span class="mini-skill-tag">HTML</span>
+                <span class="mini-skill-tag">CSS</span>
+                <span class="mini-skill-tag">React</span>
+              </div>
+              <div class="mini-section-title">EXPERIENCE</div>
+              <div style="margin-bottom: 4px">
+                <div class="mini-item-title">Senior Manager</div>
+                <div class="mini-item-sub">Tech Solutions Inc.</div>
+                <div class="mini-text">
+                  • Led a team of 10 developers.<br />
+                  • Increased productivity by 20%.
+                </div>
+              </div>
+              <div class="mini-section-title">EDUCATION</div>
+              <div>
+                <div class="mini-item-title">BS Computer Science</div>
+                <div class="mini-item-sub">University of Technology</div>
               </div>
             </div>
           </div>
           <div class="template-info">
             <div class="template-title">Minimalist Serif</div>
             <div class="template-desc">
-              Elegant, text-focused design using serif fonts.
+              An elegant, typography-focused resume that emphasizes content
+              through classic serif styling.
             </div>
             <button class="btn btn-outline">Use Template</button>
           </div>

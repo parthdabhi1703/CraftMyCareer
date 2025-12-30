@@ -338,7 +338,8 @@ select {
   nav,
   .container > div:first-child, /* Left column */
   .container > div:last-child > .card, /* ATS Checker */
-  .desktop-only > div:first-child /* Header with Download button */ {
+  .preview-container > div:first-child, /* Live Preview Header */
+  .alert-card {
     display: none !important;
   }
 
@@ -605,4 +606,27 @@ select {
   .profile-sidebar {
     min-height: auto;
   }
+}
+
+/* Alert Card Styles */
+.alert-card {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+}
+
+.alert-card.warning {
+  background-color: #fff3cd;
+  color: var(--bg-body);
+  border-color: #333;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }

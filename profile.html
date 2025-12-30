@@ -16,6 +16,38 @@
     />
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+      /* Desktop Mode: Hide Mobile Menu */
+      @media screen and (min-width: 769px) {
+        .mobile-menu {
+          display: none !important;
+        }
+      }
+
+      /* Mobile Mode */
+      @media screen and (max-width: 768px) {
+        /* Hide Nav Brand Text */
+        .nav-brand {
+          display: none !important;
+        }
+
+        /* Hide Nav Links */
+        .nav-links {
+          display: none !important;
+        }
+
+        /* Hide Back Button */
+        .back-btn {
+          display: none !important;
+        }
+
+        /* Show Hamburger Menu */
+        .hamburger-menu {
+          display: flex !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -25,7 +57,6 @@
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="builder.html">Builder</a></li>
         <li><a href="templates.html">Templates</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
@@ -38,7 +69,7 @@
         </button>
         <a
           href="builder.html"
-          class="btn btn-outline"
+          class="btn btn-outline back-btn"
           style="
             display: flex;
             align-items: center;
@@ -72,7 +103,7 @@
     <div class="container" style="margin-top: 2rem">
       <div class="profile-grid">
         <!-- Left Sidebar -->
-        <div class="profile-sidebar card">
+        <div class="profile-sidebar">
           <div class="sidebar-menu">
             <button
               class="sidebar-item active"
@@ -274,23 +305,21 @@
         const mobileMenu = document.getElementById("mobile-menu");
         const body = document.body;
 
-        if (hamburger && mobileMenu) {
-          hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            mobileMenu.classList.toggle("active");
-            body.classList.toggle("menu-open");
-          });
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          mobileMenu.classList.toggle("active");
+          body.classList.toggle("menu-open");
+        });
 
-          // Close menu when clicking on a link
-          const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
-          mobileLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-              hamburger.classList.remove("active");
-              mobileMenu.classList.remove("active");
-              body.classList.remove("menu-open");
-            });
+        // Close menu when clicking on a link
+        const mobileLinks = document.querySelectorAll(".mobile-menu-links a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            mobileMenu.classList.remove("active");
+            body.classList.remove("menu-open");
           });
-        }
+        });
       });
     </script>
   </body>

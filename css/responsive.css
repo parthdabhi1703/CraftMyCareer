@@ -151,6 +151,10 @@
     color: var(--text-main);
     border-radius: 6px;
   }
+
+  .alert-card {
+    margin-bottom: 3.5rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -209,9 +213,11 @@
 
   /* Hero section adjustments */
   .hero-section {
-    min-height: 40vh !important;
-    padding: 2rem 1rem !important;
     text-align: center;
+  }
+
+  .container h2 {
+    font-size: 1rem;
   }
 
   .hero-section h1 {
@@ -226,6 +232,11 @@
   .features-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem;
+  }
+
+  .profile-grid {
+    gap: 0rem;
+    margin-bottom: 4rem;
   }
 
   /* Card adjustments */

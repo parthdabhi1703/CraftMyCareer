@@ -115,7 +115,7 @@ function renderSocialLinksList() {
 
     container.innerHTML = resumeData.socialLinks.map((item, index) => `
         <div class="dynamic-item" style="display: flex; gap: 0.5rem; align-items: center; padding: 0.5rem;">
-            <select onchange="updateSocialLink(${index}, 'platform', this.value)" style="width: 120px; margin-bottom: 0;">
+            <select onchange="updateSocialLink(${index}, 'platform', this.value)" style="width: 100px; margin-bottom: 0;">
                 ${options.map(opt => `<option value="${opt.value}" ${item.platform === opt.value ? 'selected' : ''}>${opt.label}</option>`).join('')}
             </select>
             <input type="text" placeholder="Label (e.g. LinkedIn)" value="${item.label || ''}" oninput="updateSocialLink(${index}, 'label', this.value)" style="margin-bottom: 0; flex: 1;">
