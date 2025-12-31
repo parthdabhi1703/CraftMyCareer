@@ -1,5 +1,5 @@
 export const CONFIG = {
-    GEMINI_API_KEY: "AIzaSyD6c0dQ7S7jqvgIJpQ4UdEb6Ha_T5n56SU"
+    GEMINI_API_KEY: "AIzaSyAhg2HsQaC8mmEjIVKvOI5p95IcXMXYFvk"
 };
 
 // TEMP KEY=AIzaSyAhg2HsQaC8mmEjIVKvOI5p95IcXMXYFvk
