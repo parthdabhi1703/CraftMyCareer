@@ -141,6 +141,13 @@
             <span class="material-icons accordion-icon">expand_more</span>
           </div>
           <div class="accordion-content">
+            <div id="recommendedSkillsContainer" style="margin-bottom: 1rem;">
+               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-size: 0.9rem; color: var(--text-muted);">Recommended for your role:</span>
+                  <button onclick="getSkillRecommendations()" class="btn btn-outline" style="font-size: 0.8rem; padding: 4px 8px;">✨ AI Recommend</button>
+               </div>
+               <div id="recommendedSkillsList" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+            </div>
             <div style="display: flex; gap: 0.5rem; margin: 1rem 0">
               <input
                 type="text"

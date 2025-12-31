@@ -442,6 +442,30 @@ select {
   font-size: 1.2rem;
 }
 
+/* Skill Tags */
+.skill-tag {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-tag.recommended {
+  border-style: dashed;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  background: transparent;
+}
+
+.skill-tag.recommended:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
 /* Resume Preview */
 /* Styles moved to css/template1.css, css/template2.css, etc. */
 

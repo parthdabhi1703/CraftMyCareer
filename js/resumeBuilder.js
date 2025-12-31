@@ -146,12 +146,72 @@ window.removeSkill = function (index) {
 function renderSkillsList() {
     const container = document.getElementById('skillsList');
     container.innerHTML = resumeData.skills.map((skill, index) => `
-        <div class="skill-tag" style="display: flex; align-items: center; gap: 0.5rem;">
+        <div class="skill-tag">
             ${skill}
             <span onclick="removeSkill(${index})" style="cursor: pointer; color: #ef4444;">&times;</span>
         </div>
     `).join('');
+
+    // Update recommendations visibility based on current skills
+    renderRecommendedSkills();
 }
+
+// Recommended Skills Logic
+let recommendedSkills = [];
+
+window.getSkillRecommendations = async function () {
+    const role = resumeData.role || 'Professional';
+    const btn = document.querySelector('#recommendedSkillsContainer button');
+    if (!btn) return;
+
+    const originalText = btn.innerText;
+    btn.innerText = "Loading...";
+    btn.disabled = true;
+
+    const result = await GeminiService.recommendSkills(role);
+
+    btn.innerText = originalText;
+    btn.disabled = false;
+
+    if (result.text) {
+        recommendedSkills = result.text.split(',').map(s => s.trim()).filter(Boolean);
+        renderRecommendedSkills();
+        // Show the container if it was hidden (though we made it visible in HTML, logic might hide it)
+        document.getElementById('recommendedSkillsContainer').style.display = 'block';
+    } else {
+        alert("AI Error: " + result.error);
+    }
+};
+
+function renderRecommendedSkills() {
+    const container = document.getElementById('recommendedSkillsList');
+    if (!container) return;
+
+    // Filter out skills already added
+    const availableSkills = recommendedSkills.filter(s => !resumeData.skills.includes(s));
+
+    // Show top 8
+    const skillsToShow = availableSkills.slice(0, 8);
+
+    if (skillsToShow.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
+
+    container.innerHTML = skillsToShow.map((skill) => `
+        <div class="skill-tag recommended" onclick="addRecommendedSkill('${skill}')">
+            + ${skill}
+        </div>
+    `).join('');
+}
+
+window.addRecommendedSkill = function (skill) {
+    if (!resumeData.skills.includes(skill)) {
+        resumeData.skills.push(skill);
+        renderSkillsList(); // This will also trigger renderRecommendedSkills
+        saveData();
+    }
+};
 
 // Summary
 window.updateSummary = function (value) {

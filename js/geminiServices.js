@@ -71,6 +71,18 @@ export const GeminiService = {
         return await this.callGemini(prompt);
     },
 
+    // Recommends skills based on role.
+    async recommendSkills(role) {
+        const prompt = `
+            Act as an expert career coach.
+            Role: ${role}.
+            Task: List 20 key technical skills for this role.
+            Output ONLY the skills as a comma-separated list.
+            Do not use bullet points or numbering.
+        `;
+        return await this.callGemini(prompt);
+    },
+
     // Generates ATS Score and Suggestions
     async getATSReview(resumeData) {
         const prompt = `
